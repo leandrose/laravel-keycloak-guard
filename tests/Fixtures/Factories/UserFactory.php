@@ -1,0 +1,20 @@
+<?php
+
+namespace LeandroSe\KeycloakGuard\Tests\Fixtures\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use LeandroSe\KeycloakGuard\Tests\Fixtures\Models\User;
+
+class UserFactory extends Factory
+{
+    protected $model = User::class;
+
+    public function definition(): array
+    {
+        return [
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'keycloak_id' => $this->faker->unique()->uuid(),
+        ];
+    }
+}
