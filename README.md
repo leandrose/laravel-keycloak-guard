@@ -27,6 +27,12 @@ It also provides **optional caching of introspection responses** to reduce load 
 - Keycloak server with OAuth2 / OpenID Connect enabled
 - Keycloak realm public key available to the application
 
+## Version Compatibility
+
+| Package Version | Laravel 10 | Laravel 11 | Laravel 12 |
+|-----------------|------------|------------|------------|
+| `v1.0`          | ✅          | ✅          | ✅          |
+
 ---
 
 ## Installation
@@ -46,6 +52,10 @@ php artisan vendor:publish --provider="LeandroSe\\KeycloakGuard\\KeycloakAuthSer
 Add this to the `guards` array in `config/auth.php`:
 
 ```php
+'defaults' => [
+    'guard' => 'api',
+    'passwords' => 'users',
+],
 'guards' => [
     'keycloak' => [
         'driver' => 'keycloak',
@@ -61,7 +71,7 @@ KEYCLOAK_BASE_URL=https://keycloak.example.com
 KEYCLOAK_REALM=your-realm
 KEYCLOAK_CLIENT_ID=your-client-id
 KEYCLOAK_CLIENT_SECRET=your-client-secret
-KEYCLOAK_REALM_PUBLIC_KEY="-----BEGIN PUBLIC KEY-----...-----END PUBLIC KEY-----"
+KEYCLOAK_REALM_PUBLIC_KEY="..."
 ```
 
 `KEYCLOAK_REALM_PUBLIC_KEY` can be provided either as a full PEM or as the raw base64 body of the public key.
