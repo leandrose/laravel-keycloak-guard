@@ -1,0 +1,58 @@
+{
+    "name": "leandrose/laravel-keycloak-guard",
+    "description": "A Laravel authentication guard for Keycloak OAuth2 resource servers with token introspection and optional caching support.",
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/leandrose/laravel-keycloak-guard",
+    "keywords": [
+        "laravel",
+        "keycloak",
+        "oauth2",
+        "openid-connect",
+        "authentication",
+        "guard",
+        "resource-server",
+        "bearer-token"
+    ],
+    "authors": [
+        {
+            "name": "leandrose",
+            "email": "ltsujiguchi@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "illuminate/auth": "^10|^11|^12",
+        "illuminate/cache": "^10|^11|^12",
+        "illuminate/contracts": "^10|^11|^12",
+        "illuminate/http": "^10|^11|^12",
+        "illuminate/support": "^10|^11|^12",
+        "guzzlehttp/guzzle": "^6.5|^7",
+        "firebase/php-jwt": "^6.3|^7"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8|^9|^10",
+        "phpunit/phpunit": "^9.5|^10"
+    },
+    "autoload": {
+        "psr-4": {
+            "LeandroSe\\KeycloakGuard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LeandroSe\\KeycloakGuard\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeandroSe\\KeycloakGuard\\KeycloakAuthServiceProvider"
+            ]
+        }
+    }
+}

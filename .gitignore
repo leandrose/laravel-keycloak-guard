@@ -1,0 +1,11 @@
+/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+.phpunit.result.cache
+
+/.idea/
+/.vscode/
+
+composer.lock
